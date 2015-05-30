@@ -19,8 +19,8 @@
 </head>
 <body>
 登录成功！您的帐号和密码是：<br>
-username: ${requestScope.username}<br>
-password: ${requestScope.password}<br>
+username: ${requestScope.user.username}<br>
+password: ${requestScope.user.password}<br>
 点击此处可以跳转到<s:a href="http://www.cqu.edu.cn">重大首页</s:a>！	</body>
 </html>
 

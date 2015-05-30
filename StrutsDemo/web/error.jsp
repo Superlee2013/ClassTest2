@@ -11,6 +11,6 @@
     <title></title>
 </head>
 <body>
-您改没有登陆，请<a href="Login.jsp">登陆</a>后再进行操作
+您改没有登陆，请<a href="/Login.jsp">登陆</a>后再进行操作
 </body>
 </html>

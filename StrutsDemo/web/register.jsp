@@ -25,15 +25,10 @@
     请输入用户注册信息
   </div>
   单击此处
-  <a href="Login.jsp">登录</a>
-  <s:form action="register">
-    <s:textfield label="用户名" name="username"></s:textfield>
-    <s:password label="密码" name="password"></s:password>
-    <%--<s:password label="请再次输入密码" name="repassword"></s:password>
-    <s:textfield label="邮箱" name="email"></s:textfield>
-    <s:textfield label="年龄" name="age"></s:textfield>
-    <s:textfield label="出生年月" name="birthday"></s:textfield>
-    <s:textfield label="毕业日期" name="graduation"></s:textfield>--%>
+  <a href="/Login.jsp">登录</a>
+  <s:form action="register" namespace="/user">
+    <s:textfield label="用户名" name="user.username"></s:textfield>
+    <s:password label="密码" name="user.password"></s:password>
     <s:submit value="提交"></s:submit>
   </s:form>
 </center>

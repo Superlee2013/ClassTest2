@@ -12,8 +12,10 @@
 
             </interceptors>
     </package>-->
+
+
     <package name="struts2" extends="struts-default">
-        <interceptors>
+        <!--<interceptors>
             <interceptor name="loginInterceptor" class="com.struts2Login.interceptor.LoginInterceptor">
             </interceptor>
             <interceptor-stack name="myDefaultInterceptorStack">
@@ -22,13 +24,13 @@
             </interceptor-stack>
         </interceptors>
 
-        <default-interceptor-ref name="myDefaultInterceptorStack"/>
+        <default-interceptor-ref name="myDefaultInterceptorStack"/>-->
 
         <global-results>
             <result name="login">/error.jsp</result>
         </global-results>
 
-        <action name="login" class="com.struts2Login.action.LoginAction">
+        <!--<action name="login" class="com.struts2Login.action.LoginAction">
             <result name="success">/LoginResult.jsp</result>
             <result name="input">/failLogin.jsp</result>
         </action>
@@ -39,7 +41,37 @@
 
         <action name="main" class="com.struts2Login.action.MainAction">
             <result name="success">/mainResult.jsp</result>
-        </action>
+        </action>-->
     </package>
+
+    <!--<constant name="struts.devMode" value="true"/>
+    <constant name="struts.i18n.encoding" value="UTF-8"/>
+    &lt;!&ndash;<constant name="struts.objectFactory" value="spring"/>&ndash;&gt;
+
+    <package name="base" extends="struts-default">
+        &lt;!&ndash; 这里可以设置一些全局的返回值映射关系等 &ndash;&gt;
+        <global-results>
+            <result name="error">/error.jsp</result>
+        </global-results>
+        <global-exception-mappings>
+            <exception-mapping exception="java.lang.Exception" result="/error.jsp"></exception-mapping>
+        </global-exception-mappings>
+    </package>
+
+    <package name="requireLogin" extends="base">
+        <interceptors>
+            <interceptor name="loginInterceptor" class="com.struts2Login.interceptor.LoginInterceptor">
+            </interceptor>
+
+            <interceptor-stack name="myDefaultInterceptorStack">
+                <interceptor-ref name="loginInterceptor"/>
+                <interceptor-ref name="defaultStack"/>
+            </interceptor-stack>
+        </interceptors>
+
+        <default-interceptor-ref name="myDefaultInterceptorStack"/>
+    </package>-->
+
+
 
 </struts>

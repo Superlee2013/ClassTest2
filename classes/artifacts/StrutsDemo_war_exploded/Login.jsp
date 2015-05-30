@@ -23,9 +23,14 @@
     请输入用户名和密码
   </div>
   如果你还没有注册，单击此处<a href="register.jsp">注册</a>
-  <p:form action="login">
-    <p:textfield label="用户名" name="username" cssClass="input_list"/>
-    <p:password label="密码" name="password" cssClass="input_list"/>
+  <%--<form action="/user/login" method="post">
+    <input type="text" name="user.username" >
+    <input type="password" name="user.password">
+    <input type="submit">--%>
+  <%--</form>--%>
+  <p:form action="login" namespace="/user">
+    <p:textfield label="用户名" name="user.username" cssClass="input_list"/>
+    <p:password label="密码" name="user.password" cssClass="input_list"/>
     <p:submit value="登录"></p:submit>
   </p:form>
 </center>

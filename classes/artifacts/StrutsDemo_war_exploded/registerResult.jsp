@@ -17,7 +17,7 @@
 </head>
 <body>
 您注册成功！<br>
-请点击此处进行<a href="Login.jsp">登录</a>
+请点击此处进行<a href="/Login.jsp">登录</a>
 </body>
 </html>
 

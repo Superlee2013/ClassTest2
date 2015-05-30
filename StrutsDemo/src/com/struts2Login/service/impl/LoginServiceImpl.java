@@ -1,7 +1,8 @@
 package com.struts2Login.service.impl;
 
-import com.struts2Login.dao.ReadData;
-import com.struts2Login.dao.impl.ReadDataImpl;
+import com.struts2Login.bean.User;
+import com.struts2Login.dao.UserDao;
+import com.struts2Login.dao.impl.UserDaoImpl;
 import com.struts2Login.service.LoginServeice;
 
 import java.util.HashMap;
@@ -14,18 +15,21 @@ import java.util.Set;
  */
 public class LoginServiceImpl implements LoginServeice {
 
+    private UserDao userDao=new UserDaoImpl();
+    public void setUserDao(UserDao userDao) {
+        this.userDao = userDao;
+    }
     /**
-     *
-     * @param username
-     * @param password
-     * @return
+     *验证用户输入的姓名、密码是否匹配
+     * @param username 用户输入的姓名
+     * @param password 用户输入的密码
+     * @return 验证通过，返回true;反之，返回false
      */
     @Override
-    public boolean isLogin(String username, String password) {
-        String filename = "D:\\sql.txt";
-        ReadData in = new ReadDataImpl(); // 实例化读取数据的对象
+    public boolean checkUserLogin(String username, String password) {
+        /*String filename = "D:\\sql.txt";
         Map<String, String> map = new HashMap<String, String>();
-        map = in.readData(filename); // 利用读取函数读取数据返回一个map函数
+        map=userDao.readData(filename);
         Set<String> set = new HashSet<String>();
         set = map.keySet();
         for (String name : set) // 迭代map中的key
@@ -35,7 +39,20 @@ public class LoginServiceImpl implements LoginServeice {
                 return true;
             }
         }
+        return false;*/
+        User user=userDao.findUserByName(username);
+        if(username.equals(user.getUsername())&&password.equals(user.getPassword())){
+            return true;
+        }
         return false;
     }
 
+    @Override
+    public boolean checkUsernameExist(String username) {
+        User user=userDao.findUserByName(username);
+        if(user.getUsername().length()!=0){
+            return true;
+        }
+        return false;
+    }
 }
